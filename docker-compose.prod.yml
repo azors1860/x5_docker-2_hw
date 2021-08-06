@@ -1,0 +1,23 @@
+version: "3"
+services:
+  caddy:
+    image: "caddy:latest"
+    ports:
+     - "80:80"
+    volumes:
+     - $PWD/Caddyfile:/etc/caddy/Caddyfile
+    networks:
+     - public
+     - priv
+  echo-server:
+    networks:
+     - priv
+  json-server:
+    networks:
+     - priv
+     
+networks:
+  priv:
+    internal: true
+  public:
+    internal: false

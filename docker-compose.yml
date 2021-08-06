@@ -1,0 +1,11 @@
+version: "3"
+services:
+  echo-server:
+    image: "hashicorp/http-echo:latest"
+    command: "-text 'Hello world!'"
+     
+  json-server:
+    image: "williamyeh/json-server:latest"
+    command: "--watch db.json"
+    volumes:
+     - ./:/data/

@@ -1,0 +1,11 @@
+:80
+
+route /echo {
+	uri strip_prefix /echo
+	reverse_proxy echo-server:5678
+}
+
+route /* {
+	reverse_proxy json-server:3000
+}
+

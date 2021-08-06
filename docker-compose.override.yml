@@ -1,0 +1,9 @@
+version: "3"
+services:
+  echo-server:
+    ports:
+     - "5000:5678"
+     
+  json-server:
+    ports:
+     - "8000:3000"
